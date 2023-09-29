@@ -1,8 +1,22 @@
-export const rowTabLayoutContainer = {
-    display: "flex",
-    flexDirection: "column-reverse",
+export const getStyle = (menuDirection) => {
+    if (menuDirection === "row") {
+        return {
+            layout: {},
+            menuContainer: rowMenuContainer,
+            selectedMenuItem: selectedRowMenuItem,
+            unselectedMenuItem: unselectedRowMenuItem,
+            content,
+        };
+    }
+    return {
+        layout: columnTabLayoutContainer,
+        menuContainer: columnMenuContainer,
+        selectedMenuItem: selectedColumnMenuItem,
+        unselectedMenuITem: unselectedColumnMenuItem,
+        content,
+    };
 };
-export const rowMenuContainer = {
+const rowMenuContainer = {
     display: "flex",
     alignItems: "stretch",
     justifyContent: "flex-start",
@@ -21,13 +35,12 @@ const rowMenuItem = {
     whiteSpace: "nowrap",
     cursor: "pointer",
 };
-export const unselectedRowMenuItem = Object.assign(Object.assign({}, rowMenuItem), { color: "rgba(0,0,0,0.8)", borderTop: "1px solid rgba(0,0,0,0.5)", borderLeft: "1px solid rgba(0,0,0,0.5)", borderRight: "1px solid rgba(0,0,0,0.5)", borderBottom: "1px solid rgba(0,0,0,0.5)", backgroundColor: "rgba(0,0,0,0.1)" });
-export const selectedRowMenuItem = Object.assign(Object.assign({}, rowMenuItem), { fontWeight: "600", borderTop: "1px solid rgba(0,0,0,0.5)", borderLeft: "1px solid rgba(0,0,0,0.5)", borderRight: "1px solid rgba(0,0,0,0.5)", borderBottom: "1px solid white", backgroundColor: "white" });
-export const columnTabLayoutContainer = {
+const unselectedRowMenuItem = Object.assign(Object.assign({}, rowMenuItem), { color: "rgba(0,0,0,0.8)", borderTop: "1px solid rgba(0,0,0,0.5)", borderLeft: "1px solid rgba(0,0,0,0.5)", borderRight: "1px solid rgba(0,0,0,0.5)", borderBottom: "1px solid rgba(0,0,0,0.5)", backgroundColor: "rgba(0,0,0,0.1)" });
+const selectedRowMenuItem = Object.assign(Object.assign({}, rowMenuItem), { fontWeight: "600", borderTop: "1px solid rgba(0,0,0,0.5)", borderLeft: "1px solid rgba(0,0,0,0.5)", borderRight: "1px solid rgba(0,0,0,0.5)", borderBottom: "1px solid white", backgroundColor: "white" });
+const columnTabLayoutContainer = {
     display: "flex",
-    flexDirection: "row-reverse",
 };
-export const columnMenuContainer = {
+const columnMenuContainer = {
     display: "flex",
     flexDirection: "column",
     width: "fit-content",
@@ -46,9 +59,9 @@ const columnMenuItem = {
     whiteSpace: "nowrap",
     cursor: "pointer",
 };
-export const unselectedColumnMenuItem = Object.assign(Object.assign({}, columnMenuItem), { color: "rgba(0,0,0,0.8)", borderTop: "1px solid rgba(0,0,0,0.5)", borderLeft: "1px solid rgba(0,0,0,0.5)", borderBottom: "1px solid rgba(0,0,0,0.5)", borderRight: "1px solid rgba(0,0,0,0.5)", backgroundColor: "rgba(0,0,0,0.1)" });
-export const selectedColumnMenuItem = Object.assign(Object.assign({}, columnMenuItem), { fontWeight: "600", borderTop: "1px solid rgba(0,0,0,0.5)", borderLeft: "1px solid rgba(0,0,0,0.5)", borderBottom: "1px solid rgba(0,0,0,0.5)", borderRight: "1px solid white", backgroundColor: "white" });
-export const content = {
+const unselectedColumnMenuItem = Object.assign(Object.assign({}, columnMenuItem), { color: "rgba(0,0,0,0.8)", borderTop: "1px solid rgba(0,0,0,0.5)", borderLeft: "1px solid rgba(0,0,0,0.5)", borderBottom: "1px solid rgba(0,0,0,0.5)", borderRight: "1px solid rgba(0,0,0,0.5)", backgroundColor: "rgba(0,0,0,0.1)" });
+const selectedColumnMenuItem = Object.assign(Object.assign({}, columnMenuItem), { fontWeight: "600", borderTop: "1px solid rgba(0,0,0,0.5)", borderLeft: "1px solid rgba(0,0,0,0.5)", borderBottom: "1px solid rgba(0,0,0,0.5)", borderRight: "1px solid white", backgroundColor: "white" });
+const content = {
     padding: "5px",
     border: "1px solid rgba(0,0,0,0.5)",
     backgroundColor: "white",

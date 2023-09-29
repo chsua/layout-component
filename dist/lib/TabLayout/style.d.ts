@@ -1,10 +1,16 @@
 import { CSSProperties } from "react";
-export declare const rowTabLayoutContainer: CSSProperties;
-export declare const rowMenuContainer: CSSProperties;
-export declare const unselectedRowMenuItem: CSSProperties;
-export declare const selectedRowMenuItem: CSSProperties;
-export declare const columnTabLayoutContainer: CSSProperties;
-export declare const columnMenuContainer: CSSProperties;
-export declare const unselectedColumnMenuItem: CSSProperties;
-export declare const selectedColumnMenuItem: CSSProperties;
-export declare const content: CSSProperties;
+export declare const getStyle: (menuDirection: "row" | "column") => {
+    layout: {};
+    menuContainer: CSSProperties;
+    selectedMenuItem: CSSProperties;
+    unselectedMenuItem: CSSProperties;
+    content: CSSProperties;
+    unselectedMenuITem?: undefined;
+} | {
+    layout: CSSProperties;
+    menuContainer: CSSProperties;
+    selectedMenuItem: CSSProperties;
+    unselectedMenuITem: CSSProperties;
+    content: CSSProperties;
+    unselectedMenuItem?: undefined;
+};
